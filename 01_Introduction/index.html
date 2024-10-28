@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn React</title>
+    <!-- react cdn -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    Learning React
+    <div id="root">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque provident
+      laboriosam amet praesentium ipsum possimus ex, ratione quibusdam ad
+      excepturi ab natus, ipsam blanditiis temporibus soluta, harum reiciendis
+      minus modi tenetur obcaecati nobis in. Ullam fugiat, delectus saepe
+      deleniti est, repellat dolore sed non aliquam modi laboriosam quos laborum
+      ea.
+    </div>
+    <script type="text/babel">
+      //   const heading = React.createElement(
+      //     "h2",
+      //     { className: "heading-2" },
+      //     "This is React"
+      //   );
+      const jsxhead = (
+        <h1>
+          Hello WOrld<span> hehe</span>
+        </h1>
+      );
+      console.log(typeof jsxhead);
+      //   console.log(typeof heading);
+      // js object or react Element
+      // we cretated a react element inside the memoty
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      //   console.log(root);
+      //   root.render(heading);
+      root.render(jsxhead);
+    </script>
+  </body>
+</html>

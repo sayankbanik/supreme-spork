@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      // creating a JSX expression
+      const head = <h1>JSX Expression</h1>;
+      console.log(typeof head);
+      let name = "Sayan";
+      let age = 24.34565;
+      let demo = null; // it will not rendered,
+      let value = undefined;
+      let val = true;
+      let isFool = false;
+      function sum(num1, num2) {
+        return num1 + num2;
+      }
+      console.log(sum(10, 20));
+      // creating an functional component
+      const App = () => (
+        //parenthesis () - single expression
+        <>
+          <h1>Let's start with JSX</h1>
+          <h2>
+            Hello {name},Are you {age}
+          </h2>
+          <p>Null Value: {demo}</p>
+          <p>Undefined Value: {value}</p>
+          <p>Boolean Value: {val}</p>
+          {/* convert boolean value to string to get rendered*/}
+          <p>Am I fool?: {isFool.toString()}</p>
+          <div className="test">
+            <p>just for checking</p>
+            <p> In JSX we can embed any JavaScript Expression</p>
+            {/* Embedding Function Expression*/}
+            <h3>Function sum():{sum(10, 20)}</h3>
+            {head} {/*This is a JSX expression*/}
+            {head}
+            <App2 />
+          </div>
+        </>
+      );
+
+      //
+      ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+
+      // rendering array and objects
+      //   const arr = [1, 35, 9, 8, 45, 6, 4, 1, 2, 3, 6];
+
+      const App2 = () => {
+        const arr = [1, 35, 9, 8, 45, 6, 4, 1, 2, 3, 6];
+        const obj = {
+          name: "kaka",
+          age: 40,
+        };
+        return (
+          <>
+            <h3>Array: {arr}</h3>
+            <p>Object: {obj.name}</p>
+          </>
+        );
+      };
+
+      //   ReactDOM.createRoot(document.getElementById("root")).render(<App2 />);
+    </script>
+  </body>
+</html>
